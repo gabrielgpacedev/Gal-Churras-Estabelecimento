@@ -318,6 +318,45 @@ a { color: inherit; }
 }
 .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
+/* ── Busca de pedidos ────────────────────────── */
+.orders-toolbar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 420px;
+  color: var(--text-secondary);
+  transition: border-color 0.15s;
+}
+.search-box:focus-within { border-color: var(--accent); }
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  caret-color: var(--accent);
+}
+.search-box input::placeholder { color: var(--text-muted); }
+.search-clear {
+  flex: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+.search-clear:hover { color: var(--text-primary); background: var(--bg-card-light); }
+.search-count { font-size: 13px; color: var(--text-secondary); }
+
 /* ══════════════════════════════════════════════
    FORMULÁRIO — novo/editar produto
    ══════════════════════════════════════════════ */
