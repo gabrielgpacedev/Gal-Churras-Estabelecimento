@@ -5,7 +5,9 @@ import Sidebar from './Sidebar';
 const TITLES = {
   '/': 'Dashboard',
   '/pedidos': 'Pedidos',
-  '/produtos': 'Kits & Produtos',
+  '/kits': 'Kits',
+  '/kits/novo': 'Novo kit',
+  '/produtos': 'Produtos',
   '/produtos/novo': 'Novo produto',
 };
 

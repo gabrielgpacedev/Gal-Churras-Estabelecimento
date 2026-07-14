@@ -277,6 +277,17 @@ a { color: inherit; }
 .data-table tbody td { padding: 14px 1.5rem; border-bottom: 1px solid var(--border); }
 .data-table tbody tr:last-child td { border-bottom: none; }
 .data-table tbody tr:hover { background: var(--bg-card-light); }
+.product-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  line-height: 1;
+}
 .cell-strong { font-weight: 700; }
 .cell-gold { color: var(--gold); font-weight: 700; }
 .cell-muted { color: var(--text-muted); }
@@ -698,6 +709,133 @@ a { color: inherit; }
 .field-hint { font-size: 12px; color: var(--text-secondary); }
 .field-hint-ok { color: var(--green); }
 .field-hint-err { color: var(--red); }
+
+/* ══════════════════════════════════════════════
+   KITS — árvore de kits e produtos
+   ══════════════════════════════════════════════ */
+.kit-tree { list-style: none; margin: 0; padding: 0.5rem; }
+.kit-node { border-bottom: 1px solid var(--border); }
+.kit-node:last-child { border-bottom: none; }
+
+.kit-parent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 1rem;
+  background: none;
+  text-align: left;
+  color: var(--text-primary);
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+.kit-parent:hover { background: var(--bg-card-light); }
+.kit-caret {
+  flex: none;
+  color: var(--accent);
+  font-size: 14px;
+  transition: transform 0.15s;
+  transform: rotate(-90deg);
+}
+.kit-caret.is-open { transform: rotate(0deg); }
+.kit-name { font-weight: 800; font-size: 15px; }
+.kit-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+.kit-price { margin-left: auto; color: var(--gold); font-weight: 700; }
+
+.kit-children {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem 0.5rem 2.4rem;
+}
+.kit-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0.75rem;
+  position: relative;
+  font-size: 14px;
+  border-top: 1px dashed var(--border);
+}
+.kit-child-branch {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-left: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-bottom-left-radius: 6px;
+  margin-left: -6px;
+}
+.kit-child-name { color: var(--text-primary); font-weight: 600; }
+.kit-child-qtd {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(240, 120, 32, 0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.kit-child-cat { font-size: 12px; color: var(--text-muted); }
+.kit-child-price { margin-left: auto; color: var(--text-secondary); font-weight: 600; }
+
+/* Seletor de produtos ao montar um kit */
+.kit-picker { list-style: none; margin: 0; padding: 0; }
+.kit-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.kit-picker-row:last-child { border-bottom: none; }
+.kit-picker-row.is-on { background: rgba(240, 120, 32, 0.06); border-radius: 8px; }
+.kit-picker-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+.kit-picker-check input { width: 18px; height: 18px; accent-color: var(--accent); flex: none; cursor: pointer; }
+.kit-picker-name { font-weight: 600; }
+.kit-picker-cat { font-size: 12px; color: var(--text-muted); }
+.kit-picker-price { color: var(--gold); font-weight: 700; font-size: 14px; white-space: nowrap; }
+.kit-picker-muted { color: var(--text-muted); }
+.kit-picker-qtd { display: flex; align-items: center; gap: 6px; width: 118px; justify-content: flex-end; }
+.kit-picker-qtd input {
+  width: 44px;
+  text-align: center;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 6px 4px;
+  font: inherit;
+  -moz-appearance: textfield;
+}
+.kit-picker-qtd input::-webkit-outer-spin-button,
+.kit-picker-qtd input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.qtd-btn {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 8px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.15s, border-color 0.15s;
+}
+.qtd-btn:hover { background: var(--bg-card-light); border-color: var(--accent); }
 
 /* Cartão do plano (etapa 6) */
 .plano-card {

@@ -6,6 +6,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import OrdersPage from './pages/OrdersPage';
+import KitsPage from './pages/KitsPage';
+import KitFormPage from './pages/KitFormPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductFormPage from './pages/ProductFormPage';
 import './App.css';
@@ -25,6 +27,8 @@ export default function App() {
                   <Routes>
                     <Route path="/" element={<DashboardPage />} />
                     <Route path="/pedidos" element={<OrdersPage />} />
+                    <Route path="/kits" element={<KitsPage />} />
+                    <Route path="/kits/novo" element={<KitFormPage />} />
                     <Route path="/produtos" element={<ProductsPage />} />
                     <Route path="/produtos/novo" element={<ProductFormPage />} />
                     <Route path="*" element={<Navigate to="/" replace />} />

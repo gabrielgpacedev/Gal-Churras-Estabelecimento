@@ -123,12 +123,53 @@ export const pedidos = [
 export const orderTotal = (pedido) =>
   pedido.itens.reduce((soma, it) => soma + it.qtd * it.preco, 0);
 
+// `imagem` guarda um emoji como miniatura mock; no futuro vira a URL da foto.
 export const produtos = [
-  { id: 'K1', nome: 'Kit Picanha Premium', categoria: 'Kit', preco: 189.9, estoque: 24, ativo: true },
-  { id: 'K2', nome: 'Kit Costela Fogo de Chão', categoria: 'Kit', preco: 129.0, estoque: 12, ativo: true },
-  { id: 'K3', nome: 'Kit Espeto Misto', categoria: 'Kit', preco: 98.0, estoque: 40, ativo: true },
-  { id: 'P1', nome: 'Carvão 5kg', categoria: 'Acessório', preco: 24.9, estoque: 60, ativo: true },
-  { id: 'P2', nome: 'Pão de Alho (3un)', categoria: 'Acompanhamento', preco: 18.5, estoque: 0, ativo: false },
+  { id: 'P1', nome: 'Picanha', categoria: 'Carnes', preco: 89.9, estoque: 30, ativo: true, imagem: '🥩' },
+  { id: 'P2', nome: 'Costela bovina', categoria: 'Carnes', preco: 49.9, estoque: 25, ativo: true, imagem: '🍖' },
+  { id: 'P3', nome: 'Linguiça toscana', categoria: 'Carnes', preco: 24.9, estoque: 40, ativo: true, imagem: '🌭' },
+  { id: 'P4', nome: 'Espeto de frango', categoria: 'Carnes', preco: 19.9, estoque: 35, ativo: true, imagem: '🍢' },
+  { id: 'P5', nome: 'Pão de alho (3un)', categoria: 'Acompanhamento', preco: 18.5, estoque: 0, ativo: false, imagem: '🧄' },
+  { id: 'P6', nome: 'Carvão 5kg', categoria: 'Acessório', preco: 24.9, estoque: 60, ativo: true, imagem: '🔥' },
+];
+
+// Kits cadastrados e os produtos que os compõem (árvore kit → produtos).
+// `itens` referencia produtos por id para exibir os filhos na tela de Kits.
+export const kits = [
+  {
+    id: 'K1',
+    nome: 'Kit Picanha Premium',
+    preco: 189.9,
+    ativo: true,
+    itens: [
+      { produtoId: 'P1', qtd: 1 },
+      { produtoId: 'P3', qtd: 2 },
+      { produtoId: 'P5', qtd: 1 },
+      { produtoId: 'P6', qtd: 1 },
+    ],
+  },
+  {
+    id: 'K2',
+    nome: 'Kit Costela Fogo de Chão',
+    preco: 129.0,
+    ativo: true,
+    itens: [
+      { produtoId: 'P2', qtd: 1 },
+      { produtoId: 'P5', qtd: 1 },
+      { produtoId: 'P6', qtd: 1 },
+    ],
+  },
+  {
+    id: 'K3',
+    nome: 'Kit Espeto Misto',
+    preco: 98.0,
+    ativo: true,
+    itens: [
+      { produtoId: 'P4', qtd: 4 },
+      { produtoId: 'P3', qtd: 2 },
+      { produtoId: 'P5', qtd: 1 },
+    ],
+  },
 ];
 
 export const STATUS_LABEL = {
